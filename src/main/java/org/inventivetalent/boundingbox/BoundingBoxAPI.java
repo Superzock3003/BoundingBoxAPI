@@ -109,7 +109,15 @@ public class BoundingBoxAPI {
         try {
             Location location = block.getLocation();
 
-            Object blockPosition = BlockPosition.getConstructor(double.class, double.class, double.class).newInstance(location.getX(), location.getY(), location.getZ());
+            Object blockPosition = BlockPosition.getConstructor(
+                int.class,
+                int.class,
+                int.class
+            ).newInstance(
+                (int)(location.getX()),
+                (int)(location.getY()),
+                (int)(location.getZ())
+            );
 
             ResolverQuery getTypeQuery = new ResolverQuery(MinecraftVersion.VERSION.newerThan(Minecraft.Version.v1_18_R1) ? "a_" : MinecraftVersion.VERSION.newerThan(Minecraft.Version.v1_13_R1) ? "getType" : "getBlockData", BlockPosition);
             Object iBlockData = ChunkMethodResolver.resolve(getTypeQuery).invoke(Minecraft.getHandle(block.getChunk()), blockPosition);
