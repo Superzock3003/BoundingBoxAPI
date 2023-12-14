@@ -114,9 +114,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.inventivetalent</groupId>
-            <artifactId>reflectionhelper</artifactId>
-            <version>1.18.9-SNAPSHOT</version>
+            <groupId>com.github.Superzock3003</groupId>
+            <artifactId>ReflectionHelper</artifactId>
+            <version>1.20.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.inventivetalent</groupId>
